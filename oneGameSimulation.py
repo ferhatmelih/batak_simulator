@@ -79,6 +79,7 @@ for i in range(52):
 #print "hand nums at end",len(game.hands[0]),len(game.hands[1]),len(game.hands[2]),len(game.hands[3])
 
 print game.scoreTable
+print len(game.hands)
 print "end_time:",time.time()-start_time
 
 

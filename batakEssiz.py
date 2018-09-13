@@ -98,7 +98,6 @@ class BatakEssiz(object):
 			biggestCardOnPG = firstCardTypesOnPG_sorted[0]
 
 
-
 		index_winner = playGround.index(biggestCardOnPG)
 		winner = (index_winner + starterPlayer)%4
 		self.scoreTable[winner] += 1
@@ -107,6 +106,10 @@ class BatakEssiz(object):
 		self.playGround = []
 		self.numCardsToBePlayed = 4
 		self.update_game_state()
+		if not( len(self.hands[self.whosTurn]) ):
+			pass
+			#self.decider_on_winner()
+
 
 	def update_game_state(self):
 		self.gameState = [self.tender,self.trump,self.numCardsToBePlayed,self.playGround,self.hands[self.whosTurn],self.didTrumpAppear]
@@ -139,8 +142,6 @@ class BatakEssiz(object):
 							#all trump cards available
 				#else if: trump does not exist
 					#everything possible, all mean loose
-
-		
 		
 		#check if no cards on pGround		
 		hand = gameState[4]	
@@ -246,11 +247,15 @@ class BatakEssiz(object):
 
 
 		
-	def decider_on_winner(self,gameState,restGameData):
+	def decider_on_winner(self):
 		#when there are no cards left
 		#this function is called to decide the winnder
 		#makes result tables and stores them 
-		pass
+		tender = self.tender
+		scoreTable = self.scoreTable
+		
+
+		return resultingPoints
 
 	def __str__(self):
 		#return gameState as a string
