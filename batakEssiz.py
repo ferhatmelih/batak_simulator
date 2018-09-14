@@ -284,62 +284,7 @@ el: hand
 ihale: tender
 ihaleyi alan: tenderer
 koz: trump
-tur: round"""
-
-""""gameState" should be hashable so to make comparing easier in monte carlo sims
-"gameState" should include
-	- cards on the playground
-	- the length of the cards on the playground "numCardsToBePlayed" 
-		this effects the gameState bc it makes a difference if somebody can play a higher card or not
-	- cards on your hand
-	- "isTenderer"
-	- tender
-	- the trump
-	- the number of trumps on your hand
-	- (later) previously used cards 
-	- (later) remaning "koz" cards in the deck
-	- (later) previously used cards matched to each player 
-
-"legalMoves" is a list of cards
-
-"move" is just one card
-
-
-"gameState" is indep from whos turn it is as a player(0,1,2,3)
-	therefore a seperate var should keep player turn
-	call this var "whosTurn"
-
-	also gameState is indep from which player has that certain deck, 
-		so each player _hand_ should be kept seperately from the gameState
-
- $$$ if games take a long time to run, then a simple "gameState" can be assigned with taking feature vectors into account $$$
-
- """
-
-
-""" 	***LIST OF ALL VARS ***
-move [ a card]
-whosTurn [ a number from 0-3]
-legalMoves [a list of card]
-hand [one hand of cards containing 13 cards in the beginning]
-handList [a list of hands of each player, respevtively handList[0:3]]
-numCardsToBePlayed [remaning num of cards to be added to the playground, 0 to 4 ]
-tender [from 5 to 13, default is 5]
-possibleMoves [card list]
-
-gameState 
- - tender
- - trump
- - numCardsToBePlayed
- - cardsOnPlayground
- - hands[whosTurn] (hand of the current player)
- - didTrumpAppear
-
-restGameData
- - whosTurn
- - playedOutHands
- - roundWins (each players' win number)
-"""
+turn: round"""
 
 
 
